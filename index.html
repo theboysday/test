@@ -21,24 +21,40 @@
             // Clear input field
             document.getElementById('user-input').value = '';
 
-            // Fetch response from GPT API
-            const response = await fetch("https://api.openai.com/v1/chat/completions", {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json",
-                    "Authorization": `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`
-                },
-                body: JSON.stringify({
-                    model: "gpt-3.5-turbo",
-                    messages: [{ role: "user", content: userInput }],
-                })
-            });
+            try {
+                // Fetch response from GPT API
+                const response = await fetch("https://api.openai.com/v1/chat/completions", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json",
+                        "Authorization": `Bearer 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`
+                    },
+                    body: JSON.stringify({
+                        model: "gpt-3.5-turbo",
+                        messages: [{ role: "user", content: userInput }],
+                    })
+                });
 
-            const data = await response.json();
-            const botReply = data.choices[0].message.content;
+                // Check if the response is ok (status 200-299)
+                if (!response.ok) {
+                    throw new Error(`Error: ${response.status} - ${response.statusText}`);
+                }
 
-            // Display GPT response
-            document.getElementById('messages').innerHTML += `<p><strong>GPT:</strong> ${botReply}</p>`;
+                const data = await response.json();
+
+                // Check if the API response has the expected format
+                if (data.choices && data.choices[0] && data.choices[0].message && data.choices[0].message.content) {
+                    const botReply = data.choices[0].message.content;
+                    // Display GPT response
+                    document.getElementById('messages').innerHTML += `<p><strong>GPT:</strong> ${botReply}</p>`;
+                } else {
+                    throw new Error("Unexpected API response format.");
+                }
+            } catch (error) {
+                // Display error message
+                document.getElementById('messages').innerHTML += `<p><strong>Error:</strong> ${error.message}</p>`;
+                console.error(error);
+            }
         }
     </script>
 </body>
