@@ -4,40 +4,34 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Me</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-        }
-        header {
-            background-color: #333;
-            color: #fff;
-            padding: 1em;
-            text-align: center;
-        }
-        section {
-            padding: 2em;
-            max-width: 600px;
-            margin: 20px auto;
-            background-color: #fff;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-        }
-        h1, p {
-            margin: 0 0 1em;
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+            <button id="theme-toggle" aria-label="Toggle dark mode">Dark Mode</button>
+        </nav>
         <h1>Contact Me</h1>
     </header>
     <section>
-        <h2>Get in Touch</h2>
-        <p>You can reach me by sending an email to <a href="mailto:example@example.com">example@example.com</a>.</p>
+        <form id="contact-form">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="5" required></textarea>
+
+            <button type="submit">Send</button>
+        </form>
+        <p id="form-success">Thank you for your message!</p>
     </section>
+    <script src="script.js"></script>
 </body>
 </html>
 
