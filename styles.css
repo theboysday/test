@@ -39,6 +39,42 @@ section {
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+form label {
+    margin-top: 1em;
+}
+
+form input,
+form textarea {
+    padding: 0.5em;
+    margin-top: 0.5em;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+form button {
+    margin-top: 1em;
+    padding: 0.5em 1em;
+    border: none;
+    background-color: #333;
+    color: #fff;
+    cursor: pointer;
+}
+
+form button:hover {
+    background-color: #555;
+}
+
+#form-success {
+    color: green;
+    margin-top: 1em;
+    display: none;
+}
+
 /* Dark mode styles */
 body.dark-mode {
     background-color: #121212;
@@ -54,4 +90,22 @@ body.dark-mode section {
 body.dark-mode nav a,
 body.dark-mode nav button {
     color: #fff;
+}
+body.dark-mode input,
+body.dark-mode textarea {
+    background-color: #1e1e1e;
+    color: #e0e0e0;
+    border-color: #555;
+}
+
+body.dark-mode form button {
+    background-color: #333;
+}
+
+body.dark-mode form button:hover {
+    background-color: #444;
+}
+
+body.dark-mode #form-success {
+    color: #4caf50;
 }
