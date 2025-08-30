@@ -4,35 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Me</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-        }
-        header {
-            background-color: #333;
-            color: #fff;
-            padding: 1em;
-            text-align: center;
-        }
-        section {
-            padding: 2em;
-            max-width: 600px;
-            margin: 20px auto;
-            background-color: #fff;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-        }
-        h1, p {
-            margin: 0 0 1em;
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header>
-        <h1>About trying to find this 🖇️ link Me</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <button id="theme-toggle" aria-label="Toggle dark mode">Dark Mode</button>
+        </nav>
+        <h1>About Me</h1>
     </header>
     <section>
         <h2>Welcome!</h2>
@@ -45,5 +26,6 @@
             <li>Uploading files to GitHub</li>
         </ul>
     </section>
+    <script src="script.js"></script>
 </body>
 </html>
