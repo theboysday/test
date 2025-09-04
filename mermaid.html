@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mermaid Runner</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+            <a href="mermaid.html">Mermaid</a>
+            <button id="theme-toggle" aria-label="Toggle dark mode">Dark Mode</button>
+        </nav>
+        <h1>Mermaid Runner</h1>
+    </header>
+    <section>
+        <h2>Run Mermaid Code</h2>
+        <label for="mermaid-code">Mermaid Code:</label>
+        <textarea id="mermaid-code" rows="12" style="width:100%;"></textarea>
+        <div style="margin-top:1em;">
+            <label for="theme-select">Theme:</label>
+            <select id="theme-select">
+                <option value="default">Default</option>
+                <option value="neutral">Neutral</option>
+                <option value="forest">Forest</option>
+                <option value="dark">Dark</option>
+            </select>
+        </div>
+        <div style="margin-top:1em;">
+            <button id="render-btn">Render</button>
+            <button id="copy-btn">Copy</button>
+            <button id="clear-btn">Clear</button>
+            <button id="svg-btn">SVG</button>
+            <button id="png-btn">PNG</button>
+            <span id="error-msg" style="color:red;margin-left:1em;"></span>
+        </div>
+        <div id="mermaid-preview" style="margin-top:1em; overflow:auto;"></div>
+    </section>
+    <script src="script.js"></script>
+    <script src="mermaid-app.js"></script>
+</body>
+</html>
